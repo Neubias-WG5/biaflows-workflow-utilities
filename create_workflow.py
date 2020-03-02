@@ -6,6 +6,18 @@ import json
 from subprocess import call
 
 def create_github_repo(auth, params):
+    """
+    Create a new GitHub repository from existing template.
+
+    Parameters:
+      auth: dict,
+        includes 'username' and 'token' items for GitHub authentication
+      params: dict,
+        includes 'gh_owner', 'name', 'description', 'private' and 'template'
+        items to describe the new repository
+    Return:
+      HTTP response, response.status_code == 201 for successful creation
+    """
     data = {'owner': params['gh_owner'],
             'name': params['name'],
             'description': params['description'],
@@ -21,6 +33,17 @@ def create_github_repo(auth, params):
     return response
 
 def create_dockerhub_repo(auth, params):
+    """
+    Create a new DockerHub repository.
+
+    Parameters:
+      auth: dict, includes items 'username' and 'password' for DockerHub
+        authentication
+      params: dict, includes items 'dh_namespace', 'name', 'description',
+        'private' items to describe the new repository
+    Return:
+      HTTP response, response.status_code == 201 for successful creation
+    """
     # Login to get token
     token = ''
     response = requests.get(
@@ -32,6 +55,8 @@ def create_dockerhub_repo(auth, params):
 
     if response.status_code == 200:
         token = json.loads(response.text)['token']
+    else:
+        return response
 
     data = {'namespace': params['dh_namespace'],
             'name': params['name'].lower(),
@@ -49,6 +74,15 @@ def create_dockerhub_repo(auth, params):
     return response
 
 def modify_default(params, clonedir):
+    """
+    Modify default files copied from GitHub template repository
+
+    Parameters:
+      params: dict, includes 'gh_owner', 'name', 'description' and
+        'dh_namespace' items to update the files and handle modifications
+    Return:
+      int, 0 if successful, otherwise error code from subprocess.call
+    """
     repo_address = "https://github.com/{}/{}.git".format(params['gh_owner'],params['name'])
     command = "git clone {}".format(repo_address)
     return_code = call(command, shell=True, cwd=clonedir)
@@ -72,6 +106,19 @@ def modify_default(params, clonedir):
     return 0
 
 def commit(auth, params, repodir, files):
+    """
+    Commit changed files to GitHub repository
+
+    Parameters:
+      auth: dict, includes items 'username' and 'token' for GitHub
+        authentication
+      params: dict, includes items 'gh_owner' and 'name' for identifying the
+        modified repository
+      repodir: str, local path to repository directory
+      files: list, list of filenames
+    Return:
+      int/str: 0 if successful, HTTP response.text if an error
+    """
     # Commit all files separately
     for fn in files:
         # Get file sha
