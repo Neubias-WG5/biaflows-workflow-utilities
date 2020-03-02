@@ -1,0 +1,23 @@
+{
+    "general": {
+	"clonedir": ""
+    },
+    "gh_auth": {
+	"username": "",
+	"token": "",
+	"name": "",
+	"email": ""
+    },
+    "dh_auth": {
+	"username": "",
+	"password": ""
+    },
+    "params": {
+	"gh_owner": "Neubias-WG5",
+	"dh_namespace": "neubiaswg5",
+	"name": "W_Test",
+	"description": "Test repo created through API",
+	"private": false,
+	"template": "W_Template"
+    }
+}
