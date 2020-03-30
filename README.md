@@ -28,7 +28,7 @@ Following steps needs to be done manually as these are workflow specific tasks:\
         - gh_owner: GitHub organization
         - dh_namespace: DockerHub namespace
         - name: Name of the new workflow repository
-        - description: Description of the repository
+        - description: Description of the repository (max 100 characters, limitation of DockerHub)
         - template: Template repository for the new workflow
     - workflow_params: List of parameter definitions for the workflow. For each parameter, set (see more information in [step 3 Workflow parameter sections](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html)):
         - name: Name of the parameter
