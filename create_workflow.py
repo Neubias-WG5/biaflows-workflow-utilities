@@ -169,20 +169,6 @@ def commit(auth, params, repodir, files):
 
     return 0
 
-def upload_descriptor(url, public_key, private_key, path):
-    """
-    Upload descriptor of the workflow to BIAFLOWS
-
-    Parameters:
-      url str: URI of BIAFLOWS server
-      public_key str: Public key of BIAFLOWS account
-      private_key str: Private key of BIAFLOWS account
-    """
-    with Cytomine(url, public_key, private_key) as c:
-        read_descriptor(path)
-
-    return 0
-
 def main():
     with open('config.json') as jfile:
         data = json.load(jfile)
@@ -190,7 +176,6 @@ def main():
     dh_auth = data['dh_auth']
     params = data['params']
     workflow_params = data['workflow_params']
-    biaflows = data['biaflows']
 
     # 1. Create a new GitHub repo
     gh_status = create_github_repo(gh_auth, params)
@@ -225,12 +210,6 @@ def main():
     else:
         print("Failed to commit modified files: {}".format(status))
         sys.exit(1)
-
-    # 5. Upload descriptor to BIAFLOWS
-    upload_descriptor(biaflows['url'],
-                      biaflows['public_key'],
-                      biaflows['private_key'],
-                      os.path.join(data['general']['clonedir'],params['name'],'descriptor.json'))
 
     return 0
 

@@ -12,11 +12,6 @@
 	"username": "",
 	"password": ""
     },
-    "biaflows": {
-	"url": "biaflows.neubias.org",
-	"public_key": "",
-	"private_key": ""
-    },
     "params": {
 	"gh_owner": "Neubias-WG5",
 	"dh_namespace": "neubiaswg5",
