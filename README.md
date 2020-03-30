@@ -8,7 +8,7 @@ These workflow creation utilities handle following steps of a new workflow creat
 **Step 3**. Update sections of the Descriptor\
 **Step 7**. Create Docker image in DockerHub
 
-Following steps needs to be done manually as these are workflow specific tasks:
+Following steps needs to be done manually as these are workflow specific tasks:\
 **Step 4**. Update DockerFile\
 **Step 5**. Update wrapper script\
 **Step 6**. Adapt your workflow script\
