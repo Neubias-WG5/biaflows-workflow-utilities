@@ -4,6 +4,8 @@ import base64
 import requests
 import json
 from subprocess import call
+from cytomine import Cytomine
+from cytomine.utilities.descriptor_reader import read_descriptor
 
 def create_github_repo(auth, params):
     """
@@ -73,7 +75,7 @@ def create_dockerhub_repo(auth, params):
 
     return response
 
-def modify_default(params, clonedir):
+def modify_default(params, workflow_params, clonedir):
     """
     Modify default files copied from GitHub template repository
 
@@ -95,6 +97,23 @@ def modify_default(params, clonedir):
     desc['name'] = params['name']
     desc['description'] = params['description']
     desc['container-image']['image'] = params['dh_namespace']+'/'+params['name'].lower()
+
+    # Add workflow parameters
+    for wp in workflow_params:
+        param = {
+            "id": wp['name'].lower().replace(' ','_'),
+            "name": wp['name'],
+            "description": wp['description'],
+            "default-value": wp['default-value'],
+            "type": wp['type'],
+            "set-by-server": False,
+            "value-key": '@ID',
+            "optional": True,
+            "command-line-flag": '--@id'
+            }
+        desc['inputs'].append(param)
+        desc['command-line'] += " {}".format(param['id'].upper())
+    
     with open(desc_path,'w') as fh:
         json.dump(desc, fh, indent=4, separators=(',', ': '))
 
@@ -150,12 +169,28 @@ def commit(auth, params, repodir, files):
 
     return 0
 
+def upload_descriptor(url, public_key, private_key, path):
+    """
+    Upload descriptor of the workflow to BIAFLOWS
+
+    Parameters:
+      url str: URI of BIAFLOWS server
+      public_key str: Public key of BIAFLOWS account
+      private_key str: Private key of BIAFLOWS account
+    """
+    with Cytomine(url, public_key, private_key) as c:
+        read_descriptor(path)
+
+    return 0
+
 def main():
     with open('config.json') as jfile:
         data = json.load(jfile)
     gh_auth = data['gh_auth']
     dh_auth = data['dh_auth']
     params = data['params']
+    workflow_params = data['workflow_params']
+    biaflows = data['biaflows']
 
     # 1. Create a new GitHub repo
     gh_status = create_github_repo(gh_auth, params)
@@ -176,7 +211,7 @@ def main():
         sys.exit(1)
 
     # 3. Modify template files
-    status = modify_default(params, data['general']['clonedir'])
+    status = modify_default(params, workflow_params, data['general']['clonedir'])
     if status == 0:
         print("Template files modified successfully")
     else:
@@ -190,6 +225,12 @@ def main():
     else:
         print("Failed to commit modified files: {}".format(status))
         sys.exit(1)
+
+    # 5. Upload descriptor to BIAFLOWS
+    upload_descriptor(biaflows['url'],
+                      biaflows['public_key'],
+                      biaflows['private_key'],
+                      os.path.join(data['general']['clonedir'],params['name'],'descriptor.json'))
 
     return 0
 
