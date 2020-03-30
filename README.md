@@ -20,7 +20,7 @@ Following steps needs to be done manually as these are workflow specific tasks:
 
 ## Instructions for a new workflow creation
 1. Clone this repository: git clone https://github.com/Neubias-WG5/biaflows-workflow-utilities.git
-2. Modify config.json file to include (see example W_NucleiSegmentation-ImageJ.json):
+2. Modify config.json file to include (see example [W_NucleiSegmentation-ImageJ.json](https://github.com/Neubias-WG5/biaflows-workflow-utilities/blob/master/W_NucleiSegmentation-ImageJ_example.json)):
 - clonedir: Local path to create the new repository
 - gh_auth: Include your GitHub account details: username, authentication token, name and email
 - dh_auth: Include your DockerHub account details: username and password (DockerHub API does not currently support authentication token)
