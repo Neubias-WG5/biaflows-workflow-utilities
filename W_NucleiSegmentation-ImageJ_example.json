@@ -1,0 +1,42 @@
+{
+    "general": {
+	"clonedir": "/home/user/BIAFLOWS/"
+    },
+    "gh_auth": {
+	"username": "",
+	"token": "",
+	"name": "",
+	"email": ""
+    },
+    "dh_auth": {
+	"username": "",
+	"password": ""
+    },
+    "biaflows": {
+	"url": "biaflows.neubias.org",
+	"public_key": "",
+	"private_key": ""
+    },
+    "params": {
+	"gh_owner": "Neubias-WG5",
+	"dh_namespace": "neubiaswg5",
+	"name": "W_NucleiSegmentation-ImageJ",
+	"description": "BIAFLOWS workflow to segment clustered nuclei using a laplacian filter, thresholding and a binary watershed transform.",
+	"private": false,
+	"template": "W_Template"
+    },
+    "workflow_params": [
+	{
+	    "name": "Radius",
+	    "description": "Radius for Laplacian filter",
+	    "default-value": 5,
+	    "type": "Number"
+	},
+	{
+	    "name": "Threshold",
+	    "description": "Segmentation threshold",
+	    "default-value": -0.5,
+	    "type": "Number"
+	}
+    ]
+}
