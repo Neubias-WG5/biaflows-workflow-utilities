@@ -6,7 +6,7 @@ These workflow creation utilities handle the following steps:\
 **Step 1**. Create a GitHub repository for the new workflow\
 **Step 2**. Add the 4 required files to the workflow repository\
 **Step 3**. Update the sections of the Descriptor\
-**Step 7**. Compile the workflow repository as a BIAFLOWS Docker image from DockerHub
+**Step 7**. Compile the workflow repository as a BIAFLOWS Docker image from DockerHub\
 **Step 10**. Workflow Docker image build (done automatically by DockerHub)\
 
 The following steps still need to be performed manually (workflow specific):\
