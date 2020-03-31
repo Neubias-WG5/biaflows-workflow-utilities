@@ -10,10 +10,10 @@ These workflow creation utilities handle the following steps:\
 **Step 10**. Build workflow Docker image (done automatically by DockerHub)\
 
 The following steps still need to be performed manually (workflow specific):\
-**Step 4**. Update DockerFile (see [step 4](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html#workflow_step4), workflow parameters section)\
-**Step 5**. Update wrapper script (see [step 5](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html#workflow_step5), workflow parameters section)\
-**Step 6**. Update the workflow script (see [step 6](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html#workflow_step5), workflow parameters section)\
-**Step 8**. Link DockerHub repository to the workflow GitHub repository, and configure automated build (see [step 8](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html#workflow_step8), workflow parameters section)\
+**Step 4**. Update DockerFile (see [step 4](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html#workflow_step4))\
+**Step 5**. Update wrapper script (see [step 5](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html#workflow_step5))\
+**Step 6**. Update the workflow script (see [step 6](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html#workflow_step6))\
+**Step 8**. Link DockerHub repository to the workflow GitHub repository, and configure automated build (see [step 8](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html#workflow_step8))\
 
 And, as usual to trigger and test a new workflow release:\
 **Step 9**. Trigger a workflow release (from GitHub workflow repository)\
