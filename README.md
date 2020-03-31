@@ -10,10 +10,10 @@ These workflow creation utilities handle the following steps:\
 **Step 10**. Build workflow Docker image (done automatically by DockerHub)\
 
 The following steps still need to be performed manually (workflow specific):\
-**Step 4**. Update DockerFile (only necessary if the execution environment is different)\
-**Step 5**. Update wrapper script\
-**Step 6**. Copy/paste your workflow code to the workflow script\
-**Step 8**. Link DockerHub repository to the workflow GitHub repository, and configure automated build\
+**Step 4**. Update DockerFile (see [step 4](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html#workflow_step4), workflow parameters section)\
+**Step 5**. Update wrapper script (see [step 5](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html#workflow_step5), workflow parameters section)\
+**Step 6**. Update the workflow script (see [step 6](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html#workflow_step5), workflow parameters section)\
+**Step 8**. Link DockerHub repository to the workflow GitHub repository, and configure automated build (see [step 8](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html#workflow_step8), workflow parameters section)\
 
 And, as usual to trigger and test a new workflow release:\
 **Step 9**. Trigger a workflow release (from GitHub workflow repository)\
@@ -40,4 +40,4 @@ And, as usual to trigger and test a new workflow release:\
 3. Run create_workflow.py script (python3.6 create_workflow.py)
 4. Link created DockerHub repository to workflow GitHub repository ([step 8](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html#workflow_step8))
 5. Update created GitHub repository and commit changes to GitHub repository ([steps 4-6](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html#workflow_step4))
-6. Follow workflow release and test [steps 9-12](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html#workflow_step9)
+6. Follow workflow release and test ([steps 9-12](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html#workflow_step9))
