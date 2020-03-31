@@ -7,7 +7,7 @@ These workflow creation utilities handle the following steps:\
 **Step 2**. Add the 4 required files to the workflow repository\
 **Step 3**. Update the sections of the Descriptor\
 **Step 7**. Compile the workflow repository as a BIAFLOWS Docker image from DockerHub\
-**Step 10**. Workflow Docker image build (done automatically by DockerHub)\
+**Step 10**. Build workflow Docker image (done automatically by DockerHub)\
 
 The following steps still need to be performed manually (workflow specific):\
 **Step 4**. Update DockerFile (only necessary if the execution environment is different)\
@@ -38,6 +38,6 @@ And, as usual to trigger and test a new workflow release:\
         - default-value: Parameter default value
         - type: String either 'Number' or 'String'
 3. Run create_workflow.py script (python3.6 create_workflow.py)
-4. Link newly created DockerHub repository to workflow GitHub repository ([step 8](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html))
-5. Adapt newly created GitHub repository to implement your workflow and commit the changes into GitHub repository ([steps 4-6](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html))
+4. Link created DockerHub repository to workflow GitHub repository ([step 8](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html))
+5. Update created GitHub repository and commit changes to GitHub repository ([steps 4-6](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html))
 6. Follow workflow release and test [steps 9-12](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html)
