@@ -32,7 +32,7 @@ And, as usual to trigger and test a new workflow release:\
         - name: Name of the new workflow repository
         - description: Description of the repository (max 100 characters, limitation of DockerHub)
         - template: Template repository for the new workflow
-    - workflow_params: List of workflow parameter. For each parameter, set (see [step 3], workflow parameters section(https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html#workflow_step3)):
+    - workflow_params: List of workflow parameter. For each parameter, set (see [step 3](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html#workflow_step3), workflow parameters section):
         - name: Name of the parameter
         - description: Parameter description (presented in BIAFLOWS)
         - default-value: Parameter default value
