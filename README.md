@@ -1,22 +1,24 @@
 # biaflows-workflow-utilities
-Utilities for simpler BIAFLOWS workflow creation. The full documentation for creating a new workflow and adding it to a BIAFLOWS instance is available at:
+Utilities to simplify BIAFLOWS workflow creation. The complete documentation for creating a new workflow and adding it to a BIAFLOWS instance is available at:
 https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html
 
-These workflow creation utilities handle following steps of a new workflow creation:\
-**Step 1**. Create a workflow GitHub repository\
+These workflow creation utilities handle the following steps:\
+**Step 1**. Create a GitHub repository for the new workflow\
 **Step 2**. Add the 4 required files to the workflow repository\
-**Step 3**. Update sections of the Descriptor\
-**Step 7**. Create Docker image in DockerHub
-
-Following steps needs to be done manually as these are workflow specific tasks:\
-**Step 4**. Update DockerFile\
-**Step 5**. Update wrapper script\
-**Step 6**. Adapt your workflow script\
-**Step 8**. Link DockerHub repository to workflow GitHub repository and configure workflow Docker image automated build\
-**Step 9**. Trigger a workflow release\
+**Step 3**. Update the sections of the Descriptor\
+**Step 7**. Compile the workflow repository as a BIAFLOWS Docker image from DockerHub
 **Step 10**. Workflow Docker image build (done automatically by DockerHub)\
-**Step 11**. Add workflow to BIAFLOWS problem\
-**Step 12**. Run the workflow
+
+The following steps still need to be performed manually (workflow specific):\
+**Step 4**. Update DockerFile (only necessary if the execution environment is different)\
+**Step 5**. Update wrapper script\
+**Step 6**. Copy/paste your workflow code to the workflow script\
+**Step 8**. Link DockerHub repository to the workflow GitHub repository, and configure automated build\
+
+And, as usual to trigger and test a new workflow release:\
+**Step 9**. Trigger a workflow release (from GitHub workflow repository)\
+**Step 11**. Add new workflow to a BIAFLOWS problem (from BIAFLOWS, on first release only)\
+**Step 12**. Run the workflow (from BIAFLOWS)
 
 ## Instructions for a new workflow creation
 1. Clone this repository: git clone https://github.com/Neubias-WG5/biaflows-workflow-utilities.git
