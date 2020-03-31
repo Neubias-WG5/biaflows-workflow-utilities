@@ -32,12 +32,12 @@ And, as usual to trigger and test a new workflow release:\
         - name: Name of the new workflow repository
         - description: Description of the repository (max 100 characters, limitation of DockerHub)
         - template: Template repository for the new workflow
-    - workflow_params: List of workflow parameter. For each parameter, set (see [step 3](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html#workflow_step3)):
+    - workflow_params: List of workflow parameter. For each parameter, set (see [step 3], workflow parameters section(https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html#workflow_step3)):
         - name: Name of the parameter
         - description: Parameter description (presented in BIAFLOWS)
         - default-value: Parameter default value
         - type: String either 'Number' or 'String'
 3. Run create_workflow.py script (python3.6 create_workflow.py)
-4. Link created DockerHub repository to workflow GitHub repository ([step 8](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html))
-5. Update created GitHub repository and commit changes to GitHub repository ([steps 4-6](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html))
-6. Follow workflow release and test [steps 9-12](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html)
+4. Link created DockerHub repository to workflow GitHub repository ([step 8](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html#workflow_step8))
+5. Update created GitHub repository and commit changes to GitHub repository ([steps 4-6](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html#workflow_step4))
+6. Follow workflow release and test [steps 9-12](https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html#workflow_step9)
