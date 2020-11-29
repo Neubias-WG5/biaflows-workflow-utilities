@@ -3,7 +3,7 @@ Utilities to simplify BIAFLOWS workflow creation. The complete documentation for
 https://neubias-wg5.github.io/creating_bia_workflow_and_adding_to_biaflows_instance.html
 
 These workflow creation utilities handle the following steps:\
-**Step 1**. Create a GitHub repository for the new workflow\
+**Step 1**. Create a GitHub repository for the new workflow (but not adding a trusted source to a BIAFLOWS server)\
 **Step 2**. Add the 4 required files to the workflow repository\
 **Step 3**. Update the sections of the Descriptor\
 **Step 7**. Compile the workflow repository as a BIAFLOWS Docker image from DockerHub\
